@@ -1,3 +1,4 @@
+/*
 package com.cj.springtest.jediscomp.impl;
 
 import com.cj.springtest.jediscomp.JedisClient;
@@ -9,9 +10,11 @@ import java.util.Map;
 import java.util.Set;
 
 
+*/
 /**
  * Created by 62464 on 2017/8/24.
- */
+ *//*
+
 
 public class JedisClientSingle implements JedisClient {
 
@@ -116,3 +119,4 @@ public class JedisClientSingle implements JedisClient {
         return result;
     }
 }
+*/

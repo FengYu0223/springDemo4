@@ -1,11 +1,14 @@
+/*
 package com.cj.springtest.jediscomp;
 
 import java.util.Map;
 import java.util.Set;
 
+*/
 /**
  * Created by 62464 on 2017/8/24.
- */
+ *//*
+
 public interface JedisClient {
     String get(String key);
     String set(String key, String value);
@@ -22,3 +25,4 @@ public interface JedisClient {
     public boolean exists(String key);
     String getset(String key,String value);
 }
+*/

@@ -6,17 +6,10 @@ import com.cj.springtest.mapper.TbItemCarMapper;
 import com.cj.springtest.mapper.TbItemExtendMapper;
 import com.cj.springtest.mapper.UserMapper;
 import com.cj.springtest.model.TbItemCar;
-
 import com.cj.springtest.service.CarService;
-import com.cj.springtest.jediscomp.JedisClient;
-import com.cj.springtest.util.JsonUtils;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
-
-import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -37,9 +30,11 @@ public class CarServiceImpl implements CarService{
     @Autowired
     TbItemExtendMapper tbItemExtendMapper;
 
-    @Autowired
+  /* @Autowired
     private JedisClient jedisClient;
-    @Resource
+*/
+
+    @Autowired
     UserMapper userMapper;
     //用户数据缓存的过期时间（默认为12h ）
     int  ITEM_EXPIRE_SECOND=86400;
@@ -68,7 +63,7 @@ public class CarServiceImpl implements CarService{
     }
 
     // redis detele car
-    public void delCarRedis(String dtitle){
+   /* public void delCarRedis(String dtitle){
         String key = "test";
         try {
             String redisResult = jedisClient.get(key);
@@ -84,7 +79,7 @@ public class CarServiceImpl implements CarService{
             jedisClient.set (key, JsonUtils.objectToJson(delCarlist));
     } catch (Exception e) {
         e.printStackTrace();
-    }}
+    }}*/
 
     //sql car list
     public List<TbItemCar> carDet(){
@@ -92,7 +87,7 @@ public class CarServiceImpl implements CarService{
     }
 
     // redis add car
-    public void addCarRedis(String title, Long price) {
+   /* public void addCarRedis(String title, Long price) {
         String key = "test";
 
         //判断是否有购物车
@@ -126,9 +121,9 @@ public class CarServiceImpl implements CarService{
             list.add(tbItem);
             jedisClient.set(key, JsonUtils.objectToJson(list));
         }
-    }
+    }*/
       // redis car list
-    public List<TbItemCar> carDetRedis() {
+    /*public List<TbItemCar> carDetRedis() {
         String key = "test";
         Boolean exits = jedisClient.exists(key);
         if(exits)
@@ -136,7 +131,7 @@ public class CarServiceImpl implements CarService{
             return JsonUtils.jsonToList(jedisClient.get(key),TbItemCar.class);
         }
         return new ArrayList<TbItemCar>();
-    }
+    }*/
     /**
      * 向redis中添加缓存
      * 原则：不能影响业务的正常逻辑，所以单独处理，使用trycatch

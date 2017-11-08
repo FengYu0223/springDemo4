@@ -13,10 +13,11 @@ import java.util.List;
 
 public interface CarService {
     public void addCar(String title,Long price);
-    public void addCarRedis(String title,Long price);
     List<TbItemCar> carDet();
-    List <TbItemCar> carDetRedis();
     public void delCar(String dtitle);
-    public void delCarRedis(String dtitle);
+
+/*    public void delCarRedis(String dtitle);
+    public void addCarRedis(String title,Long price);
+    List <TbItemCar> carDetRedis();*/
 }
 

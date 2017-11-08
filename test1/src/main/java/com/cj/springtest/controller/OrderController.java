@@ -1,6 +1,5 @@
 package com.cj.springtest.controller;
 
-import com.cj.springtest.jediscomp.*;
 import com.cj.springtest.service.UmanageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,9 +33,9 @@ public class OrderController {
     @Autowired
     UmanageService umanageService;
     //清空redis
-    @Autowired
+  /*  @Autowired
     private JedisClient jedisClient;
-
+*/
     Map<String, Integer> itemMap = new HashMap<String, Integer>();
     List<Map> parseArray; //     解析json数组字符串:购物车商品
     String rname;

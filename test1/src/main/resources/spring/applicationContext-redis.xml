@@ -8,8 +8,8 @@
             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:annotation-config />
-    <context:component-scan base-package="com.cj.springtest.service" />
+  <!--  <context:annotation-config />-->
+    <!--<context:component-scan base-package="com.cj.springtest.service" />-->
 
   <!--  <context:property-placeholder location="classpath:redis.properties" />
 
@@ -32,12 +32,12 @@
 
 
     <!-- 配置redis客户端单机版 -->
-    <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+   <!-- <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
         <constructor-arg name="host" value="127.0.0.1"/>
         <constructor-arg name="port" value="6379"/>
-    </bean>
+    </bean>-->
 
     <!-- 配置redis客户端实现类 -->
-    <bean id="jedisClientSingle" class="com.cj.springtest.jediscomp.impl.JedisClientSingle"/>
+  <!--  <bean id="jedisClientSingle" class="com.cj.springtest.jediscomp.impl.JedisClientSingle"/>-->
 
 </beans>
